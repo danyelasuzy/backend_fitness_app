@@ -2,7 +2,7 @@ import express from "express";
 import {
   createProgress,
   updateProgress,
-} from "../controllers/progressController.js";
+} from "../controllers/progressControllers.js";
 
 const router = express.Router();
 

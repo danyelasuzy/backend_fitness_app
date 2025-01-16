@@ -8,7 +8,7 @@ import challengeRoutes from "./backend/routes/challengeRoutes.js";
 import friendListRoutes from "./backend/routes/friendListRoutes.js";
 import progressRoutes from "./backend/routes/progressRoutes.js";
 import leaderboardRoutes from "./backend/routes/leaderboardRoutes.js";
-import achievementRoutes from "./backend/routes/achievementRoute.js";
+import achievementRoute from "./backend/routes/achievementRoute.js";
 
 dotenv.config();
 
@@ -30,9 +30,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace this with  frontend URL
+    origin: "*", // Replace this with  frontend URL
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"], // Allow specific HTTP methods
-    credentials: true,
   })
 );
 
@@ -61,7 +60,7 @@ app.use("/api/progress", progressRoutes);
 app.use("/api/leaderboard", leaderboardRoutes);
 
 // Use achievement routes
-app.use("/api/achievements", achievementRoutes);
+app.use("/api/achievements", achievementRoute);
 
 // Test Route
 app.get("/", (req, res) => {

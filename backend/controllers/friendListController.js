@@ -63,7 +63,7 @@ export const getFriendList = async (req, res) => {
   }
 };
 
-//updateFriendStatus
+//update FriendStatus
 export const updateFriendStatus = async (req, res) => {
   const { userId, friendId, status } = req.body;
 
@@ -92,6 +92,34 @@ export const updateFriendStatus = async (req, res) => {
     });
   } catch (err) {
     console.error("Error updating friend status:", err);
+    res.status(500).json({ status: "error", message: err.message });
+  }
+};
+
+//Remove Friends
+export const removeFriend = async (req, res) => {
+  const { userId, friendId } = req.body;
+
+  try {
+    const friendList = await FriendList.findOne({ user: userId });
+
+    if (!friendList) {
+      return res.status(404).json({ message: "Friend list not found." });
+    }
+
+    friendList.friends = friendList.friends.filter(
+      (friend) => friend.friend.toString() !== friendId
+    );
+
+    await friendList.save();
+
+    res.status(200).json({
+      status: "success",
+      message: "Friend removed successfully.",
+      data: friendList,
+    });
+  } catch (err) {
+    console.error("Error removing friend:", err);
     res.status(500).json({ status: "error", message: err.message });
   }
 };
