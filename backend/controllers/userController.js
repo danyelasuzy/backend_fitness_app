@@ -106,9 +106,6 @@ export const userLogin = async (req, res) => {
     res.status(200).json({
       status: "success",
       token,
-      data: {
-        user: userWithoutPassword,
-      },
     });
   } catch (err) {
     res.status(500).json({
