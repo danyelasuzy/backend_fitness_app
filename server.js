@@ -8,7 +8,7 @@ import challengeRoutes from "./backend/routes/challengeRoutes.js";
 import friendListRoutes from "./backend/routes/friendListRoutes.js";
 import progressRoutes from "./backend/routes/progressRoutes.js";
 import leaderboardRoutes from "./backend/routes/leaderboardRoutes.js";
-import achievementRoutes from "./routes/achievementRoutes.js";
+import achievementRoutes from "./backend/routes/achievementRoute.js";
 
 dotenv.config();
 

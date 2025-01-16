@@ -2,7 +2,6 @@ import express from "express";
 import {
   createAchievement,
   getAchievementsByUser,
-  deleteAchievement,
 } from "../controllers/achievementController.js";
 
 const router = express.Router();

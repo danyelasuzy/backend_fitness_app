@@ -2,8 +2,6 @@ import express from "express";
 import {
   createProgress,
   updateProgress,
-  getProgressByUser,
-  deleteProgress,
 } from "../controllers/progressController.js";
 
 const router = express.Router();
