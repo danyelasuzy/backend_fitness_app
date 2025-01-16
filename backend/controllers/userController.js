@@ -90,7 +90,7 @@ export const userLogin = async (req, res) => {
     }
 
     // Compare passwords
-    const isPasswordValid = await bampare(password, user.password);
+    const isPasswordValid = await compare(password, user.password);
     if (!isPasswordValid) {
       return res.status(401).json({
         status: "fail",
@@ -102,9 +102,6 @@ export const userLogin = async (req, res) => {
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: process.env.JWT_EXPIRES_IN,
     });
-
-    // Exclude password from user object in response
-    const { password: _, ...userWithoutPassword } = user._doc;
 
     res.status(200).json({
       status: "success",
