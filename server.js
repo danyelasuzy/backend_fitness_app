@@ -5,6 +5,10 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import userRoutes from "./backend/routes/userRoutes.js";
 import challengeRoutes from "./backend/routes/challengeRoutes.js";
+import friendListRoutes from "./backend/routes/friendListRoutes.js";
+import progressRoutes from "./backend/routes/progressRoutes.js";
+import leaderboardRoutes from "./backend/routes/leaderboardRoutes.js";
+import achievementRoutes from "./routes/achievementRoutes.js";
 
 dotenv.config();
 
@@ -41,11 +45,23 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-// Attach user routes
+//Use user routes
 app.use("/api/users", userRoutes);
 
-//Atach challenge routes
+//Use challenge routes
 app.use("/api/challenges", challengeRoutes);
+
+//Attach friends routes
+app.use("/api/friends", friendListRoutes);
+
+//Use progress routes
+app.use("/api/progress", progressRoutes);
+
+//Use leaderboard routes
+app.use("/api/leaderboard", leaderboardRoutes);
+
+// Use achievement routes
+app.use("/api/achievements", achievementRoutes);
 
 // Test Route
 app.get("/", (req, res) => {
@@ -92,7 +108,7 @@ app.get("/api/test", (req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000 || 5000;
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}...`);

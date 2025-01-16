@@ -1,12 +1,25 @@
 import mongoose from "mongoose";
 
 const ChallengeSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  route: { type: String, required: true },
+  name: {
+    type: String,
+    required: [true, "A challenge must have a name"],
+  },
+  description: {
+    type: String,
+    required: [true, "A challenge must have a description"],
+  },
+  distance: {
+    type: Number,
+    required: [true, "A challenge must have a distance in kilometers"],
+  },
   difficulty: {
     type: String,
-    enum: ["easy", "medium", "hard"],
     required: true,
+  },
+  img: {
+    type: String, // Store image URL or path
+    required: [true, "A challenge must have an image"],
   },
   startPoint: {
     type: {
@@ -43,6 +56,11 @@ const ChallengeSchema = new mongoose.Schema({
           "Coordinates must be an array of two numbers [longitude, latitude]",
       },
     },
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User", // Reference to the User model
+    required: [true, "A challenge must be associated with a user"],
   },
 });
 

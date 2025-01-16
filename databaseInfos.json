@@ -1,0 +1,121 @@
+{
+  "challenges": [
+    {
+      "name": "Amsterdam to Luxembourg",
+      "description": "Embark on a captivating journey from the canals of Amsterdam to the picturesque hills of Luxembourg, discovering charming villages and lush countryside along the way. ",
+      "distance": 342,
+      "difficulty": "easy",
+      "img": "/challengesImages/amsterdam.png",
+      "startPoint": { "type": "Point", "coordinates": [52.3676, 4.9041] },
+      "endPoint": { "type": "Point", "coordinates": [49.6117, 6.1319] }
+    },
+
+    {
+      "name": "Brussels to Dijon",
+      "description": "Discover vibrant cities, rolling vineyards, and charming countryside on this unforgettable adventure.",
+      "distance": 450,
+      "difficulty": "easy",
+      "img": "/challengesImages/brussels.png",
+      "startPoint": { "type": "Point", "coordinates": [50.8503, 4.3517] },
+      "endPoint": { "type": "Point", "coordinates": [47.322, 5.0415] }
+    },
+
+    {
+      "name": "Copenhagen to Gothenburg",
+      "description": "This scenic route offers breathtaking coastal views and a touch of Nordic magic at every step.",
+      "distance": 278,
+      "difficulty": "easy",
+      "img": "/challengesImages/copenhagen.png",
+      "startPoint": { "type": "Point", "coordinates": [55.6761, 12.5683] },
+      "endPoint": { "type": "Point", "coordinates": [57.7089, 11.9746] }
+    },
+
+    {
+      "name": "Lisbon to Cadiz",
+      "description": "This route promises stunning coastal vistas, vibrant cultures, and a journey steeped in Mediterranean charm.",
+      "distance": 416,
+      "difficulty": "easy",
+      "img": "/challengesImages/lisbon.png",
+      "startPoint": { "type": "Point", "coordinates": [38.7169, -9.139] },
+      "endPoint": { "type": "Point", "coordinates": [36.5164, -6.2994] }
+    },
+
+    {
+      "name": "Montpellier to Genoa",
+      "description": "Discover the beauty of the Mediterranean as you traverse picturesque landscapes, historic towns, and sun-drenched shores.",
+      "distance": 530,
+      "difficulty": "medium",
+      "img": "/challengesImages/genoa.png",
+      "startPoint": { "type": "Point", "coordinates": [43.6108, -3.8767] },
+      "endPoint": { "type": "Point", "coordinates": [44.4056, 8.9463] }
+    },
+
+    {
+      "name": "Rome to Milan",
+      "description": "Explore Italy's rich history, rolling hills, and vibrant cities as you travel between these iconic destinations.",
+      "distance": 594,
+      "difficulty": "medium",
+      "img": "/challengesImages/rome.png",
+      "startPoint": { "type": "Point", "coordinates": [41.9028, 12.4964] },
+      "endPoint": { "type": "Point", "coordinates": [45.4642, 9.19] }
+    },
+
+    {
+      "name": "Athens to Tirane",
+      "description": "This route combines ancient heritage, rugged landscapes, and a captivating blend of cultures in the heart of the Balkans.",
+      "distance": 594,
+      "difficulty": "medium",
+      "img": "/challengesImages/athens.png",
+      "startPoint": { "type": "Point", "coordinates": [37.9838, 23.7275] },
+      "endPoint": { "type": "Point", "coordinates": [41.3275, 19.8189] }
+    },
+
+    {
+      "name": "Prague to Paris",
+      "description": "Embark on a fairytale journey from the cobblestone streets of Prague to the romantic charm of Paris.",
+      "distance": 993,
+      "difficulty": "medium",
+      "img": "/challengesImages/paris.png",
+      "startPoint": { "type": "Point", "coordinates": [50.0755, 14.4378] },
+      "endPoint": { "type": "Point", "coordinates": [48.8566, 2.3522] }
+    },
+
+    {
+      "name": "John o’Groats to Land’s End",
+      "description": "Take on the ultimate British challenge, journeying from the rugged beauty of John o’Groats to the breathtaking cliffs of Land’s End. ",
+      "distance": 1309,
+      "difficulty": "hard",
+      "img": "/challengesImages/john groats.png",
+      "startPoint": { "type": "Point", "coordinates": [58.6362, -3.0684] },
+      "endPoint": { "type": "Point", "coordinates": [50.066, -5.7136] }
+    },
+
+    {
+      "name": "Bucharest to Berlin",
+      "description": "This route weaves through captivating cultures, historic landmarks, and breathtaking scenery. ",
+      "distance": 1519,
+      "difficulty": "hard",
+      "img": "/challengesImages/bucharest.png",
+      "startPoint": { "type": "Point", "coordinates": [44.4268, 26.1025] },
+      "endPoint": { "type": "Point", "coordinates": [52.52, 13.405] }
+    },
+
+    {
+      "name": "Vienna to Kyiv",
+      "description": "Set off on an unforgettable journey from the imperial elegance of Vienna to the vibrant spirit of Kyiv ",
+      "distance": 1210,
+      "difficulty": "hard",
+      "startPoint": { "type": "Point", "coordinates": [48.2082, 16.3738] },
+      "endPoint": { "type": "Point", "coordinates": [50.4501, 30.5234] }
+    },
+
+    {
+      "name": "Warsaw to Barcelona",
+      "description": "This route offers a stunning blend of culture, architecture, and scenic landscapes as you traverse the heart of Europe to its sunny Mediterranean coast. ",
+      "distance": 2163,
+      "difficulty": "hard",
+      "startPoint": { "type": "Point", "coordinates": [52.2297, 21.0122] },
+      "endPoint": { "type": "Point", "coordinates": [41.3851, 2.1734] }
+    }
+  ]
+}
