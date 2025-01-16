@@ -9,9 +9,9 @@ import {
 const router = express.Router();
 
 // Route to create progress
-router.post("/create", createProgress);
+router.post("/createProgress", createProgress);
 
 // Route to update progress
-router.patch("/update", updateProgress);
+router.patch("/updateProgress", updateProgress);
 
 export default router;
