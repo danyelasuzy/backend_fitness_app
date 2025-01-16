@@ -103,9 +103,15 @@ export const userLogin = async (req, res) => {
       expiresIn: process.env.JWT_EXPIRES_IN,
     });
 
+    // Exclude password from user object in response
+    const { password: _, ...userWithoutPassword } = user._doc;
+
     res.status(200).json({
       status: "success",
       token,
+      data: {
+        user: userWithoutPassword,
+      },
     });
   } catch (err) {
     res.status(500).json({
