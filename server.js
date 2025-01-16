@@ -28,12 +28,14 @@ mongoose
 
 const app = express();
 
-// app.use(
-//   cors({
-//     origin: "*", // Replace this with  frontend URL
-//     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"], // Allow specific HTTP methods
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://localhost:5173", // Replace this with  frontend URL
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // Allow specific HTTP methods
+  })
+);
 
 app.options("*", cors());
 
