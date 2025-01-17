@@ -57,11 +57,16 @@ const ChallengeSchema = new mongoose.Schema({
       },
     },
   },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User", // Reference to the User model
-    required: [true, "A challenge must be associated with a user"],
-  },
+  registeredUsers: [
+    {
+      userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+      },
+      progress: { type: Number, default: 0 }, // Progress in km
+    },
+  ],
 });
 
 const Challenge = mongoose.model("Challenge", ChallengeSchema);

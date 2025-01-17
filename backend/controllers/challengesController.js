@@ -77,6 +77,7 @@ export const createChallenge = async (req, res) => {
   }
 };
 
+//Get all the challenge
 export const getAllChallenges = async (req, res) => {
   try {
     // Fetch all challenges from the database
@@ -96,5 +97,48 @@ export const getAllChallenges = async (req, res) => {
       status: "error",
       message: err.message || "Internal Server Error",
     });
+  }
+};
+
+//Get a certain challenge
+export const getChallenge = async (req, res) => {
+  try {
+    const routes = await Challenge.find();
+    res.status(200).json({ status: "success", data: routes });
+  } catch (err) {
+    res.status(500).json({ status: "error", message: err.message });
+  }
+};
+
+//User registering to the challenge
+export const userRegisterChallenge = async (req, res) => {
+  try {
+    const { userId } = req.body;
+    const challenge = await Challenge.findById(req.params.id);
+
+    if (!challenge) {
+      return res
+        .status(404)
+        .json({ status: "fail", message: "Challenge not found" });
+    }
+
+    const isAlreadyRegistered = challenge.registeredUsers.some(
+      (user) => user.userId.toString() === userId
+    );
+
+    if (isAlreadyRegistered) {
+      return res
+        .status(400)
+        .json({ status: "fail", message: "User already registered" });
+    }
+
+    challenge.registeredUsers.push({ userId, progress: 0 });
+    await challenge.save();
+
+    res
+      .status(200)
+      .json({ status: "success", message: "User registered to the challenge" });
+  } catch (err) {
+    res.status(500).json({ status: "error", message: err.message });
   }
 };
