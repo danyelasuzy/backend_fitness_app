@@ -142,3 +142,24 @@ export const userRegisterChallenge = async (req, res) => {
     res.status(500).json({ status: "error", message: err.message });
   }
 };
+
+const addUserToChallenge = async () => {
+  try {
+    await Challenge.updateOne(
+      { _id: "6788bc3c9c866fafba5037d4" },
+      {
+        $push: {
+          registeredUsers: {
+            userId: "6788bc9cbd5fec9f195de4b",
+            progress: 0,
+          },
+        },
+      }
+    );
+    console.log("User added to challenge!");
+  } catch (err) {
+    console.error("Error updating challenge:", err.message);
+  }
+};
+
+addUserToChallenge();
