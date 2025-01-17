@@ -26,6 +26,8 @@ mongoose
   .then(() => console.log("DB connection successful!"))
   .catch((err) => console.error("Not connected:", err));
 
+mongoose.set("strictPopulate", false);
+
 const app = express();
 
 app.use(

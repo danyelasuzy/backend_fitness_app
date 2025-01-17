@@ -2,14 +2,20 @@
   "challenges": [
     {
       "name": "Amsterdam to Luxembourg",
-      "description": "Embark on a captivating journey from the canals of Amsterdam to the picturesque hills of Luxembourg, discovering charming villages and lush countryside along the way. ",
+      "description": "Embark on a captivating journey from the canals of Amsterdam to the picturesque hills of Luxembourg, discovering charming villages and lush countryside along the way.",
       "distance": 342,
       "difficulty": "easy",
       "img": "/challengesImages/amsterdam.png",
       "startPoint": { "type": "Point", "coordinates": [52.3676, 4.9041] },
-      "endPoint": { "type": "Point", "coordinates": [49.6117, 6.1319] }
+      "endPoint": { "type": "Point", "coordinates": [49.6117, 6.1319] },
+      "waypoints": [
+        { "type": "Point", "coordinates": [51.4416, 5.4697] },
+        { "type": "Point", "coordinates": [50.8514, 5.691] }
+      ],
+      "registeredUsers": [
+        { "userId": { "$oid": "6784e8e9cbd5fec9f195de4b" }, "progress": 0 }
+      ]
     },
-
     {
       "name": "Brussels to Dijon",
       "description": "Discover vibrant cities, rolling vineyards, and charming countryside on this unforgettable adventure.",
@@ -17,9 +23,15 @@
       "difficulty": "easy",
       "img": "/challengesImages/brussels.png",
       "startPoint": { "type": "Point", "coordinates": [50.8503, 4.3517] },
-      "endPoint": { "type": "Point", "coordinates": [47.322, 5.0415] }
+      "endPoint": { "type": "Point", "coordinates": [47.322, 5.0415] },
+      "waypoints": [
+        { "type": "Point", "coordinates": [49.2583, 4.0317] },
+        { "type": "Point", "coordinates": [48.9539, 5.9515] }
+      ],
+      "registeredUsers": [
+        { "userId": { "$oid": "6784e916cbd5fec9f195de4e" }, "progress": 0 }
+      ]
     },
-
     {
       "name": "Copenhagen to Gothenburg",
       "description": "This scenic route offers breathtaking coastal views and a touch of Nordic magic at every step.",
@@ -27,9 +39,15 @@
       "difficulty": "easy",
       "img": "/challengesImages/copenhagen.png",
       "startPoint": { "type": "Point", "coordinates": [55.6761, 12.5683] },
-      "endPoint": { "type": "Point", "coordinates": [57.7089, 11.9746] }
+      "endPoint": { "type": "Point", "coordinates": [57.7089, 11.9746] },
+      "waypoints": [
+        { "type": "Point", "coordinates": [55.9161, 12.4995] },
+        { "type": "Point", "coordinates": [56.3069, 12.8559] }
+      ],
+      "registeredUsers": [
+        { "userId": "6784e934cbd5fec9f195de51", "progress": 0 }
+      ]
     },
-
     {
       "name": "Lisbon to Cadiz",
       "description": "This route promises stunning coastal vistas, vibrant cultures, and a journey steeped in Mediterranean charm.",
@@ -37,19 +55,31 @@
       "difficulty": "easy",
       "img": "/challengesImages/lisbon.png",
       "startPoint": { "type": "Point", "coordinates": [38.7169, -9.139] },
-      "endPoint": { "type": "Point", "coordinates": [36.5164, -6.2994] }
+      "endPoint": { "type": "Point", "coordinates": [36.5164, -6.2994] },
+      "waypoints": [
+        { "type": "Point", "coordinates": [38.0167, -7.8632] },
+        { "type": "Point", "coordinates": [37.207, -7.4078] }
+      ],
+      "registeredUsers": [
+        { "userId": "6784ed13cbd5fec9f195de55", "progress": 0 }
+      ]
     },
-
     {
       "name": "Montpellier to Genoa",
       "description": "Discover the beauty of the Mediterranean as you traverse picturesque landscapes, historic towns, and sun-drenched shores.",
       "distance": 530,
       "difficulty": "medium",
       "img": "/challengesImages/genoa.png",
-      "startPoint": { "type": "Point", "coordinates": [43.6108, -3.8767] },
-      "endPoint": { "type": "Point", "coordinates": [44.4056, 8.9463] }
+      "startPoint": { "type": "Point", "coordinates": [43.6108, 3.8767] },
+      "endPoint": { "type": "Point", "coordinates": [44.4056, 8.9463] },
+      "waypoints": [
+        { "type": "Point", "coordinates": [43.3996, 5.1881] },
+        { "type": "Point", "coordinates": [43.776, 7.5006] }
+      ],
+      "registeredUsers": [
+        { "userId": "678511c9996ce5bf8c3eb9d8", "progress": 0 }
+      ]
     },
-
     {
       "name": "Rome to Milan",
       "description": "Explore Italy's rich history, rolling hills, and vibrant cities as you travel between these iconic destinations.",
@@ -57,9 +87,15 @@
       "difficulty": "medium",
       "img": "/challengesImages/rome.png",
       "startPoint": { "type": "Point", "coordinates": [41.9028, 12.4964] },
-      "endPoint": { "type": "Point", "coordinates": [45.4642, 9.19] }
+      "endPoint": { "type": "Point", "coordinates": [45.4642, 9.19] },
+      "waypoints": [
+        { "type": "Point", "coordinates": [42.9634, 12.7261] },
+        { "type": "Point", "coordinates": [44.4949, 11.3426] }
+      ],
+      "registeredUsers": [
+        { "userId": "6787930ce1f091e038bd107a", "progress": 0 }
+      ]
     },
-
     {
       "name": "Athens to Tirane",
       "description": "This route combines ancient heritage, rugged landscapes, and a captivating blend of cultures in the heart of the Balkans.",
@@ -67,9 +103,15 @@
       "difficulty": "medium",
       "img": "/challengesImages/athens.png",
       "startPoint": { "type": "Point", "coordinates": [37.9838, 23.7275] },
-      "endPoint": { "type": "Point", "coordinates": [41.3275, 19.8189] }
+      "endPoint": { "type": "Point", "coordinates": [41.3275, 19.8189] },
+      "waypoints": [
+        { "type": "Point", "coordinates": [39.0742, 21.8243] },
+        { "type": "Point", "coordinates": [40.6346, 20.7883] }
+      ],
+      "registeredUsers": [
+        { "userId": "6787a188f6fcb8589ef41ab3", "progress": 0 }
+      ]
     },
-
     {
       "name": "Prague to Paris",
       "description": "Embark on a fairytale journey from the cobblestone streets of Prague to the romantic charm of Paris.",
@@ -77,45 +119,78 @@
       "difficulty": "medium",
       "img": "/challengesImages/paris.png",
       "startPoint": { "type": "Point", "coordinates": [50.0755, 14.4378] },
-      "endPoint": { "type": "Point", "coordinates": [48.8566, 2.3522] }
+      "endPoint": { "type": "Point", "coordinates": [48.8566, 2.3522] },
+      "waypoints": [
+        { "type": "Point", "coordinates": [49.1951, 16.6068] },
+        { "type": "Point", "coordinates": [48.5734, 7.7521] }
+      ],
+      "registeredUsers": [
+        { "userId": "678951bae4c6ac45838cb5cd", "progress": 0 }
+      ]
     },
-
     {
       "name": "John o’Groats to Land’s End",
-      "description": "Take on the ultimate British challenge, journeying from the rugged beauty of John o’Groats to the breathtaking cliffs of Land’s End. ",
+      "description": "Take on the ultimate British challenge, journeying from the rugged beauty of John o’Groats to the breathtaking cliffs of Land’s End.",
       "distance": 1309,
       "difficulty": "hard",
-      "img": "/challengesImages/john groats.png",
+      "img": "/challengesImages/john_groats.png",
       "startPoint": { "type": "Point", "coordinates": [58.6362, -3.0684] },
-      "endPoint": { "type": "Point", "coordinates": [50.066, -5.7136] }
+      "endPoint": { "type": "Point", "coordinates": [50.066, -5.7136] },
+      "waypoints": [
+        { "type": "Point", "coordinates": [56.4907, -4.2026] },
+        { "type": "Point", "coordinates": [54.5973, -5.9301] }
+      ],
+      "registeredUsers": [
+        { "userId": "678aa55039c4cf8945a2c866", "progress": 0 }
+      ]
     },
-
     {
       "name": "Bucharest to Berlin",
-      "description": "This route weaves through captivating cultures, historic landmarks, and breathtaking scenery. ",
+      "description": "This route weaves through captivating cultures, historic landmarks, and breathtaking scenery.",
       "distance": 1519,
       "difficulty": "hard",
       "img": "/challengesImages/bucharest.png",
       "startPoint": { "type": "Point", "coordinates": [44.4268, 26.1025] },
-      "endPoint": { "type": "Point", "coordinates": [52.52, 13.405] }
+      "endPoint": { "type": "Point", "coordinates": [52.52, 13.405] },
+      "waypoints": [
+        { "type": "Point", "coordinates": [47.4979, 19.0402] },
+        { "type": "Point", "coordinates": [49.8397, 24.0297] }
+      ],
+      "registeredUsers": [
+        { "userId": "678aa57539c4cf8945a2c869", "progress": 0 }
+      ]
     },
-
     {
       "name": "Vienna to Kyiv",
-      "description": "Set off on an unforgettable journey from the imperial elegance of Vienna to the vibrant spirit of Kyiv ",
+      "description": "Set off on an unforgettable journey from the imperial elegance of Vienna to the vibrant spirit of Kyiv.",
       "distance": 1210,
       "difficulty": "hard",
+      "img": "/challengesImages/vienna.png",
       "startPoint": { "type": "Point", "coordinates": [48.2082, 16.3738] },
-      "endPoint": { "type": "Point", "coordinates": [50.4501, 30.5234] }
+      "endPoint": { "type": "Point", "coordinates": [50.4501, 30.5234] },
+      "waypoints": [
+        { "type": "Point", "coordinates": [49.8397, 24.0297] },
+        { "type": "Point", "coordinates": [50.4547, 30.5238] }
+      ],
+      "registeredUsers": [
+        { "userId": "678aa59939c4cf8945a2c86c", "progress": 0 }
+      ]
     },
-
     {
       "name": "Warsaw to Barcelona",
-      "description": "This route offers a stunning blend of culture, architecture, and scenic landscapes as you traverse the heart of Europe to its sunny Mediterranean coast. ",
+      "description": "This route offers a stunning blend of culture, architecture, and scenic landscapes as you traverse the heart of Europe to its sunny Mediterranean coast.",
       "distance": 2163,
       "difficulty": "hard",
+      "img": "/challengesImages/warsaw.png",
       "startPoint": { "type": "Point", "coordinates": [52.2297, 21.0122] },
-      "endPoint": { "type": "Point", "coordinates": [41.3851, 2.1734] }
+      "endPoint": { "type": "Point", "coordinates": [41.3851, 2.1734] },
+      "waypoints": [
+        { "type": "Point", "coordinates": [50.0755, 14.4378] },
+        { "type": "Point", "coordinates": [48.8566, 2.3522] }
+      ],
+      "registeredUsers": [
+        { "userId": "678aa5bf39c4cf8945a2c86f", "progress": 0 }
+      ]
     }
   ]
 }
