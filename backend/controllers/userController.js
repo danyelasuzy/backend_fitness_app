@@ -214,3 +214,31 @@ export const resetPassword = async (req, res, next) => {
     });
   }
 };
+
+//Fetch current challenge
+export const getUserChallenge = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const userChallenge = await Challenge.findOne({
+      "registeredUsers.userId": userId,
+    });
+
+    if (!userChallenge) {
+      return res.status(404).json({
+        status: "fail",
+        message: "No active challenge found for the user.",
+      });
+    }
+
+    res.status(200).json({
+      status: "success",
+      data: userChallenge,
+    });
+  } catch (err) {
+    console.error("Error fetching current challenge:", err);
+    res.status(500).json({
+      status: "error",
+      message: err.message,
+    });
+  }
+};

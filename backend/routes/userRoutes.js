@@ -4,6 +4,7 @@ import {
   userRegister,
   forgotPassword,
   resetPassword,
+  getUserChallenge,
 } from "../controllers/userController.js";
 
 const router = express.Router();
@@ -14,5 +15,6 @@ router.post("/login", userLogin);
 
 router.post("/forgotPassword", forgotPassword);
 router.patch("/resetPassword/:token", resetPassword);
+router.get("/:userId/currentChallenge", getUserChallenge);
 
 export default router;

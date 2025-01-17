@@ -143,6 +143,8 @@ export const userRegisterChallenge = async (req, res) => {
   }
 };
 
+//Add manually a user to an existent challenge for testing
+
 const addUserToChallenge = async () => {
   try {
     await Challenge.updateOne(
@@ -163,3 +165,30 @@ const addUserToChallenge = async () => {
 };
 
 addUserToChallenge();
+
+export const getCurrentChallenge = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const userChallenge = await Challenge.findOne({
+      "registeredUsers.userId": userId,
+    });
+
+    if (!userChallenge) {
+      return res.status(404).json({
+        status: "fail",
+        message: "No active challenge found for the user.",
+      });
+    }
+
+    res.status(200).json({
+      status: "success",
+      data: userChallenge,
+    });
+  } catch (err) {
+    console.error("Error fetching current challenge:", err);
+    res.status(500).json({
+      status: "error",
+      message: err.message,
+    });
+  }
+};
