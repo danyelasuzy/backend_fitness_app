@@ -1,5 +1,4 @@
 import { Challenge } from "../models/challengeModel.js";
-
 //Create challenges
 export const createChallenge = async (req, res) => {
   try {
@@ -80,10 +79,10 @@ export const createChallenge = async (req, res) => {
 //Get all the challenge
 export const getAllChallenges = async (req, res) => {
   try {
-    // Fetch all challenges from the database
-    const challenges = await Challenge.find().populate("user", "email"); // Optional: Populate user details
+    console.log("Fetching all challenges from the database...");
+    const challenges = await Challenge.find();
+    console.log("Challenges fetched successfully:", challenges);
 
-    // Respond with the list of challenges
     res.status(200).json({
       status: "success",
       results: challenges.length,
@@ -92,21 +91,11 @@ export const getAllChallenges = async (req, res) => {
       },
     });
   } catch (err) {
-    console.error("Error fetching challenges:", err);
+    console.error("Error fetching challenges:", err.stack || err.message);
     res.status(500).json({
       status: "error",
       message: err.message || "Internal Server Error",
     });
-  }
-};
-
-//Get a certain challenge
-export const getChallenge = async (req, res) => {
-  try {
-    const routes = await Challenge.find();
-    res.status(200).json({ status: "success", data: routes });
-  } catch (err) {
-    res.status(500).json({ status: "error", message: err.message });
   }
 };
 
@@ -143,52 +132,27 @@ export const userRegisterChallenge = async (req, res) => {
   }
 };
 
-//Add manually a user to an existent challenge for testing
+//Add manually a user to an existent challenge for testing(not functional yet)
 
-const addUserToChallenge = async () => {
+const addUserToChallenge = async (challengeId, userId) => {
   try {
-    await Challenge.updateOne(
-      { _id: "6788bc3c9c866fafba5037d4" },
+    const updatedChallenge = await Challenge.findByIdAndUpdate(
+      challengeId,
       {
-        $push: {
+        $addToSet: {
           registeredUsers: {
-            userId: "6788bc9cbd5fec9f195de4b",
+            userId: new mongoose.Types.ObjectId(userId),
             progress: 0,
           },
         },
-      }
+      },
+      { new: true }
     );
-    console.log("User added to challenge!");
+
+    console.log("Updated Challenge:", updatedChallenge);
   } catch (err) {
-    console.error("Error updating challenge:", err.message);
+    console.error("Error adding user to challenge:", err);
   }
 };
 
-addUserToChallenge();
-
-export const getCurrentChallenge = async (req, res) => {
-  try {
-    const { userId } = req.params;
-    const userChallenge = await Challenge.findOne({
-      "registeredUsers.userId": userId,
-    });
-
-    if (!userChallenge) {
-      return res.status(404).json({
-        status: "fail",
-        message: "No active challenge found for the user.",
-      });
-    }
-
-    res.status(200).json({
-      status: "success",
-      data: userChallenge,
-    });
-  } catch (err) {
-    console.error("Error fetching current challenge:", err);
-    res.status(500).json({
-      status: "error",
-      message: err.message,
-    });
-  }
-};
+addUserToChallenge("678aa91f4a9ad766b571eef6", "6784e8e9cbd5fec9f195de4b");
