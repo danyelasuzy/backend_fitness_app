@@ -48,6 +48,12 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
+// Serve static files from the "public" directory
+app.use(
+  "/challengesImages",
+  express.static(path.join(__dirname, "assets/challengesImages"))
+);
+
 //Use user routes
 app.use("/api/users", userRoutes);
 
