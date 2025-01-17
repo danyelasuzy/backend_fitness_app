@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
 import express from "express";
+import { fileURLToPath } from "url";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
 import morgan from "morgan";
 import userRoutes from "./backend/routes/userRoutes.js";
 import challengeRoutes from "./backend/routes/challengeRoutes.js";
@@ -27,6 +29,9 @@ mongoose
   .catch((err) => console.error("Not connected:", err));
 
 mongoose.set("strictPopulate", false);
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
