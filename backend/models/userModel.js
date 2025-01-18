@@ -19,6 +19,13 @@ const userSchema = new mongoose.Schema({
   },
   passwordResetToken: String,
   passwordResetExpires: Date,
+  avatarUrl: { type: String, default: "" },
+  badges: { type: [String], default: [] },
+  medals: {
+    gold: { type: Number, default: 0 },
+    silver: { type: Number, default: 0 },
+    bronze: { type: Number, default: 0 },
+  },
 });
 
 // Remove confirmPassword before saving
