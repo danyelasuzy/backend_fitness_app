@@ -131,28 +131,3 @@ export const userRegisterChallenge = async (req, res) => {
     res.status(500).json({ status: "error", message: err.message });
   }
 };
-
-//Add manually a user to an existent challenge for testing(not functional yet)
-
-const addUserToChallenge = async (challengeId, userId) => {
-  try {
-    const updatedChallenge = await Challenge.findByIdAndUpdate(
-      challengeId,
-      {
-        $addToSet: {
-          registeredUsers: {
-            userId: new mongoose.Types.ObjectId(userId),
-            progress: 0,
-          },
-        },
-      },
-      { new: true }
-    );
-
-    console.log("Updated Challenge:", updatedChallenge);
-  } catch (err) {
-    console.error("Error adding user to challenge:", err);
-  }
-};
-
-addUserToChallenge("678aa91f4a9ad766b571eef6", "6784e8e9cbd5fec9f195de4b");
