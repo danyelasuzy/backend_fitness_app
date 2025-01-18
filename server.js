@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import morgan from "morgan";
+import path from "path";
 import userRoutes from "./backend/routes/userRoutes.js";
 import challengeRoutes from "./backend/routes/challengeRoutes.js";
 import friendListRoutes from "./backend/routes/friendListRoutes.js";
@@ -37,6 +38,11 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true, // Allow specific HTTP methods
   })
+);
+
+app.use(
+  "/challengesImages",
+  express.static(path.join(__dirname, "/assets/challengesImages"))
 );
 
 app.options("*", cors());
