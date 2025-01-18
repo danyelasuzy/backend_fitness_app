@@ -5,7 +5,7 @@
       "description": "Embark on a captivating journey from the canals of Amsterdam to the picturesque hills of Luxembourg, discovering charming villages and lush countryside along the way.",
       "distance": 342,
       "difficulty": "easy",
-      "img": "/challengesImages/amsterdam.png",
+      "img": "https://res.cloudinary.com/dsjoijkzu/image/upload/v1737234764/challengesImages/cqznvpel07bzq9fbdflt.png",
       "startPoint": { "type": "Point", "coordinates": [52.3676, 4.9041] },
       "endPoint": { "type": "Point", "coordinates": [49.6117, 6.1319] },
       "waypoints": [

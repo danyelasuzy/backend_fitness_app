@@ -3,8 +3,6 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import morgan from "morgan";
-import path from "path";
-import { fileURLToPath } from "url";
 import userRoutes from "./backend/routes/userRoutes.js";
 import challengeRoutes from "./backend/routes/challengeRoutes.js";
 import friendListRoutes from "./backend/routes/friendListRoutes.js";
@@ -30,10 +28,6 @@ mongoose
 
 mongoose.set("strictPopulate", false);
 
-//Define static files variables
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 const app = express();
 
 app.use(
@@ -47,10 +41,7 @@ app.use(
 
 app.use(express.json());
 
-app.use(
-  "/challengesImages",
-  express.static(path.join(__dirname, "/assets/challengesImages"))
-);
+app.use(express.static("public"));
 
 app.options("*", cors());
 
