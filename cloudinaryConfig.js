@@ -9,3 +9,15 @@ cloudinary.config({
 });
 
 export default cloudinary;
+
+cloudinary.uploader.upload(
+  "./path/to/image.png",
+  {
+    folder: "challengesImages",
+    upload_preset: "ml_default",
+  },
+  (error, result) => {
+    if (error) console.error(error);
+    else console.log("Uploaded URL:", result.secure_url);
+  }
+);
