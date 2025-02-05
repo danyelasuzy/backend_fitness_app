@@ -219,6 +219,7 @@ export const resetPassword = async (req, res, next) => {
 export const getUserChallenge = async (req, res) => {
   try {
     const { userId } = req.params;
+    console.log("userId on back-end in getUserChallenge:", userId);
     const userChallenge = await Challenge.findOne({
       "registeredUsers.userId": userId,
     });
