@@ -1,4 +1,5 @@
 import { User } from "../models/userModel.js";
+import { Challenge } from "../models/challengeModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
@@ -218,8 +219,7 @@ export const resetPassword = async (req, res, next) => {
 //Fetch current challenge
 export const getUserChallenge = async (req, res) => {
   try {
-    const { userId } = req.params;
-    console.log("userId on back-end in getUserChallenge:", userId);
+    const { userId } = req.params;    
     const userChallenge = await Challenge.findOne({
       "registeredUsers.userId": userId,
     });
