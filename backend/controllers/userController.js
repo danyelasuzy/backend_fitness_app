@@ -216,7 +216,7 @@ export const resetPassword = async (req, res, next) => {
   }
 };
 
-//Fetch current challenge
+// Fetch current challenge
 export const getUserChallenge = async (req, res) => {
   try {
     const { userId } = req.params;    
@@ -233,7 +233,10 @@ export const getUserChallenge = async (req, res) => {
 
     res.status(200).json({
       status: "success",
-      data: userChallenge,
+      data: {
+        challengeId: userChallenge._id,
+        challenge: userChallenge,
+      },
     });
   } catch (err) {
     console.error("Error fetching current challenge:", err);
